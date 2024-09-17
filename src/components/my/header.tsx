@@ -1,10 +1,16 @@
 'use client'
 
 import { useState } from 'react'
-import { Search, Bell, MessageSquare, User, Menu } from 'lucide-react'
+import { Search, Bell, MessageSquare, User, Menu, LogIn, UserPlus } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { ModeToggle } from './mode-toggle'
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -49,9 +55,23 @@ export default function Header() {
             <Button variant="ghost" size="icon">
               <MessageSquare className="h-5 w-5" />
             </Button>
-            <Button variant="ghost" size="icon">
-              <User className="h-5 w-5" />
-            </Button>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="icon">
+                  <User className="h-5 w-5" />
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem>
+                  <LogIn className="mr-2 h-4 w-4" />
+                  <span>Login</span>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  <UserPlus className="mr-2 h-4 w-4" />
+                  <span>Signup</span>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <ModeToggle/>
             <Button>Action</Button>
           </div>
@@ -83,9 +103,14 @@ export default function Header() {
                 Messages
               </Button>
               <Button variant="ghost" className="justify-start">
-                <User className="h-5 w-5 mr-2" />
-                Profile
+                <LogIn className="h-5 w-5 mr-2" />
+                Login
               </Button>
+              <Button variant="ghost" className="justify-start">
+                <UserPlus className="h-5 w-5 mr-2" />
+                Signup
+              </Button>
+              <ModeToggle/>
               <Button className="justify-start">Action</Button>
             </div>
           </nav>
