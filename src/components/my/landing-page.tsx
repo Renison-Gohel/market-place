@@ -24,7 +24,7 @@ export default function LandingPage() {
     <div className="min-h-screen">
     {/* <div className="min-h-screen bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500"> */}
       {/* Animated Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500">
+      <section className="relative h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 rounded-b-3xl">
         {/* Animated background circles */}
         <div className="absolute inset-0 overflow-hidden">
           {[...Array(20)].map((_, i) => (
@@ -47,10 +47,10 @@ export default function LandingPage() {
         <div className="relative z-10 text-white text-center px-4">
           <div className={`transition-all duration-1000 ease-out transform ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
             <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-pulse">
-              Welcome to the Future
+              Welcome to the app
             </h1>
             <p className="text-xl md:text-2xl mb-8 animate-bounce">
-              Discover the power of innovation
+              Discover the power of our app
             </p>
           </div>
 
@@ -58,7 +58,7 @@ export default function LandingPage() {
             <input
               type="text"
               placeholder="Search the future..."
-              className="w-full px-4 py-3 rounded-full text-gray-900 bg-white bg-opacity-20 backdrop-blur-md border border-white border-opacity-30 outline-none focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300 group-hover:bg-opacity-30"
+              className="w-full px-4 py-3 rounded-full bg-white bg-opacity-20 backdrop-blur-md border border-white border-opacity-30 outline-none focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-300 group-hover:bg-opacity-30"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
@@ -72,10 +72,10 @@ export default function LandingPage() {
 
           <div className="mt-12 space-x-4">
             <button className="bg-white text-indigo-600 px-6 py-3 rounded-full font-semibold hover:bg-indigo-100 transition-all duration-300 transform hover:scale-105">
-              Get Started
+              Suppliers
             </button>
             <button className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-full font-semibold hover:bg-white hover:text-indigo-600 transition-all duration-300 transform hover:scale-105">
-              Learn More
+              Catalogs
             </button>
           </div>
         </div>
@@ -89,7 +89,7 @@ export default function LandingPage() {
             {[1, 2, 3].map((item) => (
               <div key={item} className="flex flex-col items-center">
                 <img src={`https://g-lvcxvidfork.vusercontent.net/placeholder.svg?height=200&width=300&text=Feature%201`} width={300} height={200} alt={`Feature ${item}`} className="rounded-lg shadow-lg mb-4" />
-                <p className="text-lg font-semibold text-gray-700">Feature {item} Description</p>
+                <p className="text-lg font-semibold text-gray-700 dark:text-slate-300">Feature {item} Description</p>
               </div>
             ))}
           </div>
@@ -103,22 +103,22 @@ export default function LandingPage() {
             <div className="bg-white rounded-lg shadow-md p-6 flex items-center">
               <Users className="w-12 h-12 text-blue-500 mr-4" />
               <div>
-                <h3 className="text-2xl font-bold">1,234</h3>
-                <p className="text-gray-600">Dynamic Site Visitors</p>
+                <h3 className="text-2xl font-bold dark:text-slate-900">1,234</h3>
+                <p className="text-gray-600 dark:text-slate-700">Dynamic Site Visitors</p>
               </div>
             </div>
             <div className="bg-white rounded-lg shadow-md p-6 flex items-center">
               <UserCheck className="w-12 h-12 text-green-500 mr-4" />
               <div>
-                <h3 className="text-2xl font-bold">567</h3>
-                <p className="text-gray-600">Currently Signed-in Users</p>
+                <h3 className="text-2xl font-bold dark:text-slate-900">567</h3>
+                <p className="text-gray-600 dark:text-slate-700">Currently Signed-in Users</p>
               </div>
             </div>
             <div className="bg-white rounded-lg shadow-md p-6 flex items-center">
               <ShoppingCart className="w-12 h-12 text-purple-500 mr-4" />
               <div>
-                <h3 className="text-2xl font-bold">89</h3>
-                <p className="text-gray-600">Currently Available Buyers</p>
+                <h3 className="text-2xl font-bold dark:text-slate-900">89</h3>
+                <p className="text-gray-600 dark:text-slate-700">Currently Available Buyers</p>
               </div>
             </div>
           </div>
