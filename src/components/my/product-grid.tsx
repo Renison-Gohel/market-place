@@ -72,22 +72,26 @@ export default function ProductGrid({ onProductSelect }: ProductGridProps) {
       <h2 className="text-2xl font-bold mb-6">Featured Products</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {products.map((product) => (
-          <Link href={product.product_url} key={product.id}>
-            <div key={product.id} className="rounded-lg shadow-md overflow-hidden border border-orange-400">
+          <div key={product.id} className="rounded-lg shadow-md overflow-hidden border border-orange-400">
+            <Link href={product.product_url} key={product.id}>
               <img
                 src={product.image}
                 alt={product.title}
                 className="w-full h-48 object-cover"
               />
-              <div className="p-4">
-                <div className="flex justify-between items-start mb-2">
+            </Link>
+            <div className="p-4">
+              <div className="flex justify-between items-start mb-2">
+                <Link href={product.product_url} key={product.id}>
                   <h3 className="text-lg font-semibold">{product.title}</h3>
-                  <Checkbox
-                    id={`product-${product.id}`}
-                    onCheckedChange={(checked) => onProductSelect(product.id, checked === true)}
-                  />
-                </div>
-                {/* <p className={`text-sm mb-2 ${theme==='dark' ? 'text-white' : 'text-black'}`}>{product.detail}</p> */}
+                </Link>
+                <Checkbox
+                  id={`product-${product.id}`}
+                  onCheckedChange={(checked) => onProductSelect(product.id, checked === true)}
+                />
+              </div>
+              {/* <p className={`text-sm mb-2 ${theme==='dark' ? 'text-white' : 'text-black'}`}>{product.detail}</p> */}
+              <Link href={product.product_url} key={product.id}>
                 <p className={`text-sm mb-2`}>{product.detail}</p>
                 <div className="flex items-center text-sm text-gray-500 mb-2">
                   <MapPin className="w-4 h-4 mr-1" />
@@ -98,18 +102,18 @@ export default function ProductGrid({ onProductSelect }: ProductGridProps) {
                     <Star
                       key={i}
                       className={`w-4 h-4 ${i < Math.floor(product.rating)
-                          ? 'text-yellow-400 fill-current'
-                          : 'text-gray-300'
+                        ? 'text-yellow-400 fill-current'
+                        : 'text-gray-300'
                         }`}
                     />
                   ))}
                   <span className="ml-1 text-sm text-gray-600">{product.rating.toFixed(1)}</span>
                 </div>
-              </div>
+              </Link>
             </div>
-          </Link>
+          </div>
         ))}
       </div>
-    </div>
+    </div >
   )
 }

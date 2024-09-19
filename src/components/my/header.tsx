@@ -11,6 +11,7 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
+import Link from 'next/link'
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
@@ -62,17 +63,21 @@ export default function Header() {
                 </Button>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuItem>
-                  <LogIn className="mr-2 h-4 w-4" />
-                  <span>Login</span>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <UserPlus className="mr-2 h-4 w-4" />
-                  <span>Signup</span>
-                </DropdownMenuItem>
+                <Link href="/auth/signin">
+                  <DropdownMenuItem>
+                    <LogIn className="mr-2 h-4 w-4" />
+                    <span>Login</span>
+                  </DropdownMenuItem>
+                </Link>
+                <Link href="/auth/signup">
+                  <DropdownMenuItem>
+                    <UserPlus className="mr-2 h-4 w-4" />
+                    <span>Signup</span>
+                  </DropdownMenuItem>
+                </Link>
               </DropdownMenuContent>
             </DropdownMenu>
-            <ModeToggle/>
+            <ModeToggle />
             <Button>Action</Button>
           </div>
 
@@ -110,7 +115,9 @@ export default function Header() {
                 <UserPlus className="h-5 w-5 mr-2" />
                 Signup
               </Button>
-              <ModeToggle/>
+              <div className="justify-start pl-2">
+                <ModeToggle />
+              </div>
               <Button className="justify-start">Action</Button>
             </div>
           </nav>
