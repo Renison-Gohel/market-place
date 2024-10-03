@@ -546,8 +546,8 @@ const HelpPage = () => {
                                             <input
                                                 autoComplete="off"
                                                 className="form-control form-control-lg search-query"
-                                                placeholder="Search here"
-                                                defaultValue=""
+                                                placeholder="Search Here"
+                                                defaultValue="All"
                                             />
                                         </div>
                                     </div>
