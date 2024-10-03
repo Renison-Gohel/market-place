@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider"
-import Header from "@/components/my/header";
+import '@/../public/css/E7526FBA320375AFB.css'
+import Script from "next/script";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -30,13 +32,25 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <Script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.min.js" />
+        {/* <Script src="http://localhost:3000/js/cmg.v1726519039.js" /> */}
+        <Script src="http://localhost:3000/js/conversion.js" />
+        <Script src="http://localhost:3000/js/gpt.js" />
+        <Script src="https://code.jquery.com/color/jquery.color-3.0.0.min.js" />
+        <Script src="https://code.jquery.com/jquery-3.7.1.min.js" />
+        <Script src="https://code.jquery.com/ui/1.14.0-beta.2/jquery-ui.min.js" />
+        <Script src="http://localhost:3000/js/modernizr.dev.js" />
+        <Script src="http://localhost:3000/js/popper.min.js" />
+        <Script src="http://localhost:3000/js/production.min.v1726519031.js" />
+        <Script src="http://localhost:3000/js/rocket-loader.min.js" />
+        <Script src="http://localhost:3000/js/smart.js" />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <Header/>
+          {/* <Header/> */}
           {children}
         </ThemeProvider>
       </body>
